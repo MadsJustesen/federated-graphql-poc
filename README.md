@@ -1,6 +1,7 @@
 # Federation POC
 
-This is a small POC to show how federated graphql can work with Apollo router
+This is a small POC to show how federated graphql can work with Apollo router.
+About federation: https://www.apollographql.com/docs/federation/
 
 ### Contents
 
@@ -11,6 +12,8 @@ This repository contains a supergrah config file and 3 small python services usi
 - Customers
 
 Customers is a plain graphql service, while Shop and Products implements federated schema types
+
+A shop has products that a api-consumer might want to query. In this example Shop does not resolve a list of products in its own subgraph, but rather sets a list of productIds for that Shop. Via federation, the Product service will resolve the products list on the Shop type, and expose all fields that the Product service has defined on the Product type. The Shop does not know anything about the Product type.
 
 ### Prerequisites
 
