@@ -1,0 +1,19 @@
+schema {
+  query: Query
+}
+
+type Query {
+  product(id: ID!): Product
+}
+
+type Product @key(fields: "id") {
+  id: ID!
+  name: String!
+  sku: String
+}
+
+type Shop @key(fields: "id productIds") @extends {
+  id: ID! @external
+  productIds: [ID!] @external
+  products: [Product]
+}

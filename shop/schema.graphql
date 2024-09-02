@@ -1,0 +1,13 @@
+schema {
+  query: Query
+}
+
+type Query {
+  shop(id: ID!): Shop
+}
+
+type Shop @key(fields: "id productIds") {
+  id: ID!
+  name: String!
+  productIds: [ID!]
+}
