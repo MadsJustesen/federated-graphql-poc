@@ -13,7 +13,7 @@ This repository contains a supergrah config file and 3 small python services usi
 
 Customers is a plain graphql service, while Shop and Products implements federated schema types
 
-A shop has products that a api-consumer might want to query. In this example Shop does not resolve a list of products in its own subgraph, but rather sets a list of productIds for that Shop. Via federation, the Product service will resolve the products list on the Shop type, and expose all fields that the Product service has defined on the Product type. The Shop does not know anything about the Product type.
+A shop has products that an api-consumer might want to query. In this example Shop does not resolve a list of products in its own subgraph, but rather sets a list of productIds for that Shop. Via federation, the Product service will resolve the products list on the Shop type, and expose all fields that the Product service has defined on the Product type. The Shop does not know anything about the Product type.
 
 ### Prerequisites
 
@@ -42,4 +42,4 @@ Next, start the 3 services in 3 separate terminal windows:
 In yet another terminal window start router:
 `./router --dev --supergraph supergraph.graphql`
 
-After this you can got to http://localhost:4000/ and query the supergraph
+After this you can go to http://localhost:4000/ and query the supergraph
